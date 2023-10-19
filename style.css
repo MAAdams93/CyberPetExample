@@ -1,3 +1,7 @@
+*{
+    padding-top: 20px; 
+ }
+
 body {
     display:flex;
     flex-direction: column;
@@ -14,15 +18,36 @@ body {
 
 .Pet {
     position:absolute;
-    bottom: 0;
-    left: 50%;
+    bottom: 50%;
+    left: 25%;
     transform: translateX(-50%);
     width: 80px;
     height: 80px;
-    background-color: red;
-    border-radius: 50%;
+    -webkit-animation: linear infinite;
+    -webkit-animation-name: run;
+    -webkit-animation-duration: 10s;
 }
 
+@-webkit-keyframes run {
+    0% {
+      left: 0;
+    }
+    48% {
+      -webkit-transform: rotateY(0deg); 
+    }
+    50% { 
+      left: calc(100% - 100px);
+      -webkit-transform: rotateY(180deg); 
+    }
+    98% {
+      -webkit-transform: rotateY(180deg); 
+    }
+    100% {
+      left: 0;    
+       -webkit-transform: rotateY(0deg);
+    }
+  }
+  
 .Actions {
     display: flex;
     justify-content: space-between;

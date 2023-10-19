@@ -8,8 +8,7 @@ class Cyberpet {
         document.querySelector(".Hunger").textContent = this.hunger;
         document.querySelector(".Thirst").textContent = this.thirst;
         document.querySelector(".Happiness").textContent = this.happiness;
-        document.querySelector(".Pet").style.height = `${this.happiness}px`; //Causes "Pet" to grow based on "Happiness"
-        document.querySelector(".Pet").style.width = `${this.happiness}px`; //Causes "Pet" to grow based on "Happiness"
+        document.querySelector(".Status").textContent = this.status;
     }
     decreaseStats(){ //Causes stats to change over time
         this.hunger += 2;
@@ -22,6 +21,7 @@ class Cyberpet {
             this.hunger -= 10;
             this.thirst -= 1;
             this.happiness +=1;
+            this.status = "Your dog is eating"
             this.updateUI();
             console.log(pet)
        }
@@ -31,6 +31,7 @@ class Cyberpet {
             this.thirst -= 10;
             this.hunger -= 1;
             this.happiness += 1;
+            this.status = "Your dog is drinking"
             this.updateUI();
             console.log(pet)
         }
@@ -40,9 +41,10 @@ class Cyberpet {
             this.happiness += 10;
             this.hunger += 10;
             this.thirst += 10;
+            this.status = "Your dog is playing"
             this.updateUI();
             console.log(pet)
-        }
+        } 
     }
 }
 
